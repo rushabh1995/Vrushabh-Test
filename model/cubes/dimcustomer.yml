@@ -45,6 +45,11 @@ cubes:
         sql: default
         type: string
 
+      - name: Calculated_Column
+        sql: concat({CUBE.fullname}, {CUBE.occupation})
+        type: string
+        
+
       - name: datefirstpurchase
         sql: datefirstpurchase
         type: time

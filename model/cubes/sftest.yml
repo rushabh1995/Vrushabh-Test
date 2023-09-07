@@ -1,0 +1,23 @@
+cubes:
+  - name: sftest
+    sql_table: test
+
+    data_source: datasource1
+
+    joins:
+      - name: dimcustomer
+        sql: "{CUBE}.customerkey = {dimcustomer}.customerkey"
+        relationship: one_to_many
+
+    dimensions:
+      
+      - name: customerkey
+        sql: customerkey
+        type: number
+        primary_key: true
+
+      - name: occupation
+        sql: OCCUPATION
+        type: string
+
+    measures:
