@@ -34,7 +34,7 @@ cubes:
         type: string
 
       - name: derived_full_gender
-        sql: select case when gender="F" then "Female" when gender="M" then "Male" end derived_full_gender from cube_poc.cube_poc_schema.dimcustomer;
+        sql: select *, case when gender="F" then "Female" when gender="M" then "Male" end derived_full_gender from cube_poc.cube_poc_schema.dimcustomer;
         type: string
 
       - name: occupation
