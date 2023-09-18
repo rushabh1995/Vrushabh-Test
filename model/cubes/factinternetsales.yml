@@ -49,6 +49,10 @@ cubes:
         sql: orderdate
         type: string
 
+      - name: simple_calculation
+        sql: '{factinternetsales.salesorderlinenumber}*14'   
+        type: number
+
     measures:
       - name: count
         type: count
