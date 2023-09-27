@@ -1,0 +1,14 @@
+cubes:
+  {% for model in dbt_models() %}
+  - name: "_{{ model.name }}"
+    sql_table: "{{ model.sql_table }}" 
+
+    dimensions:
+      {{ model.as_dimensions() }}
+
+    measures:
+      - name: count
+        type: count
+
+    joins: []
+  {% endfor %}

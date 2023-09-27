@@ -1,0 +1,13 @@
+{% set model = dbt_model('dimcustomers') %}
+
+cubes:
+  - {{ model.as_cube() }}
+
+    dimensions:
+      {{ model.as_dimensions() }}
+
+    measures:
+      - name: count
+        type: count
+
+    joins: []
