@@ -1,0 +1,1 @@
+from cube.conf import config
